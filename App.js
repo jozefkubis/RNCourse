@@ -7,7 +7,6 @@ import {
   TextInput,
   View,
 } from "react-native"
-import { v4 as uuidv4 } from "uuid"
 
 export default function App() {
   const [enteredGoalText, setEnteredGoalText] = useState("")
@@ -20,7 +19,7 @@ export default function App() {
   function addGoalHandler() {
     setCourseGoals((currentCourseGoals) => [
       ...currentCourseGoals,
-      { text: enteredGoalText, id: uuidv4() },
+      { text: enteredGoalText, id: Math.random().toString() },
     ])
     setEnteredGoalText("")
   }
